@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class SelectionSort {
 
+    //usando arraylist(muito facil)
     public static  ArrayList<Integer>  selectionSortComArrayList( ArrayList<Integer>  array){
         ArrayList<Integer> arrayOrdenado = new ArrayList<>();
         int size = array.size();
@@ -24,5 +25,33 @@ public class SelectionSort {
             }
         }
         return menorIndex;
+    }
+
+    //usando array
+
+    public static int[] selectionSort(int[] array){
+        int[] arrayBase = new int[1];
+
+        int tamanho = array.length;
+
+        for(int i =0;i<tamanho;i++){
+            int indexMenorValor = MenorValor(array);
+
+        }
+
+        return arrayBase;
+    }
+
+    private static int MenorValor(int[] array) {
+        int menorValor = array[0];
+        int indexMenorValor = 0;
+
+        for(int i =0;i<array.length;i++){
+            if(array[i]<menorValor){
+                menorValor=array[i];
+                indexMenorValor=i;
+            }
+        }
+        return indexMenorValor;
     }
 }
