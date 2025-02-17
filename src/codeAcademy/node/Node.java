@@ -3,7 +3,7 @@ package codeAcademy.node;
 public class Node {
 
     public String data;
-    public Node next;
+    private Node next;
 
     public Node(String data){
         this.data = data;
@@ -14,6 +14,10 @@ public class Node {
         this.next = node;
     }
 
+    public Node getNextNode(){
+        return this.next;
+    }
+
     public static void main(String[] args) {
         Node firstNode = new Node("I am a Node!");
         System.out.println(firstNode.data);
@@ -22,6 +26,6 @@ public class Node {
 
         firstNode.setNextNode(secondNode);
 
-        System.out.println(firstNode.next.data);
+        System.out.println(firstNode.getNextNode().data);
     }
 }
