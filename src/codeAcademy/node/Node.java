@@ -1,7 +1,6 @@
 package codeAcademy.node;
 
 public class Node {
-
     public String data;
     private Node next;
 
@@ -19,13 +18,18 @@ public class Node {
     }
 
     public static void main(String[] args) {
-        Node firstNode = new Node("I am a Node!");
-        System.out.println(firstNode.data);
+        Node strawberry = new Node("Berry Tasty");
+        Node banana = new Node("Banana-rama");
+        Node coconut = new Node("Nuts for Coconut");
 
-        Node secondNode = new Node("I am the second Node!");
+        strawberry.setNextNode(banana);
+        banana.setNextNode(coconut);
 
-        firstNode.setNextNode(secondNode);
+        Node currentNode = strawberry;
 
-        System.out.println(firstNode.getNextNode().data);
+        while (currentNode!= null){
+            System.out.println(currentNode.data);
+            currentNode=currentNode.getNextNode();
+        }
     }
 }
