@@ -54,18 +54,17 @@ public Node head;
     }
 
     public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.addToHead("primeiro");
-        linkedList.addToHead("segundo");
-        linkedList.addToHead("terceiro");
-        linkedList.addToHead("quarto");
+        LinkedList seasons = new LinkedList();
+        seasons.printList();
+        seasons.addToHead("summer");
+        seasons.addToHead("spring");
+        seasons.printList();
+        seasons.addToTail("fall");
+        seasons.addToTail("winter");
+        seasons.printList();
+        seasons.removeHead();
+        seasons.printList();
 
-     //   linkedList.addToTail("quinto");
-       // linkedList.addToTail("sexto");
-
-
-        Node currentNode = linkedList.head;
-        System.out.println(linkedList.printList());
 
     }
 }
