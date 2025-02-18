@@ -10,6 +10,19 @@ public Node head;
         this.head = null;
     }
 
+    public String printList(){
+        String output = "<head>";
+        Node currentNode = this.head;
+        while(currentNode!=null){
+            output = output +" "+currentNode.data;
+            currentNode =currentNode.getNextNode();
+        }
+        output= output+" <tail>";
+        System.out.println(output);
+        return output;
+
+    }
+
     public void addToHead(String data){
         Node newHead = new Node(data);
         Node currentHead = this.head;
@@ -47,15 +60,12 @@ public Node head;
         linkedList.addToHead("terceiro");
         linkedList.addToHead("quarto");
 
-        linkedList.addToTail("quinto");
-        linkedList.addToTail("sexto");
+     //   linkedList.addToTail("quinto");
+       // linkedList.addToTail("sexto");
 
 
         Node currentNode = linkedList.head;
-        while (true){
-            System.out.println(currentNode.data);
-            currentNode = currentNode.getNextNode();
-        }
+        System.out.println(linkedList.printList());
 
     }
 }
