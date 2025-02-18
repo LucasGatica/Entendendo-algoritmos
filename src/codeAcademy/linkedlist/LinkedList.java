@@ -18,6 +18,14 @@ public Node head;
           this.head.setNextNode(currentHead);
       }
     }
+    public String removeHead(){
+        Node removedHead = this.head;
+        if(removedHead==null){
+            return null;
+        }
+        this.head = removedHead.getNextNode();
+        return removedHead.data;
+    }
 
     public void addToTail(String data) {
         Node tail = this.head;
