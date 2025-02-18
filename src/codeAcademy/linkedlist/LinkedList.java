@@ -19,12 +19,28 @@ public Node head;
       }
     }
 
+    public void addToTail(String data) {
+        Node tail = this.head;
+        Node newNode = new Node(data);
+        if(tail==null){
+            this.head = newNode;
+        }else{
+            while (tail.getNextNode()!=null){
+                tail = tail.getNextNode();
+            }
+            tail.setNextNode(newNode);
+        }
+    }
+
     public static void main(String[] args) {
         LinkedList linkedList = new LinkedList();
         linkedList.addToHead("primeiro");
         linkedList.addToHead("segundo");
         linkedList.addToHead("terceiro");
         linkedList.addToHead("quarto");
+
+        linkedList.addToTail("quinto");
+        linkedList.addToTail("sexto");
 
 
         Node currentNode = linkedList.head;
