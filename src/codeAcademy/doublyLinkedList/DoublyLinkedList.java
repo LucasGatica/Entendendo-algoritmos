@@ -9,17 +9,47 @@ public class DoublyLinkedList {
         this.tail = null;
     }
 
-    public String removeTail(){
+    public String removeTail() {
         Node removedTail = this.tail;
-        if(removedTail==null){
+        if (removedTail == null) {
             return null;
         }
-        this.tail=removedTail.getPreviousNode();
-        if(removedTail==head){
+        this.tail = removedTail.getPreviousNode();
+        if (this.tail != null) {
+            this.tail.setNextNode(null);
+        }
+        if (removedTail == this.head) {
+            this.removeHead();
+        }
+        return removedTail.data;
+    }
+
+    public Node removeByData(String data){
+        Node nodeToRemove = null;
+        Node currentNode = this.head;
+        while (currentNode!=null){
+            if(currentNode.data==data){
+                nodeToRemove=currentNode;
+                break;
+            }
+             currentNode = currentNode.getNextNode();
+        }
+        if (nodeToRemove==null){
+            return null;
+        }
+        if (nodeToRemove==this.head){
             removeHead();
         }
+       else if (nodeToRemove==this.tail){
+            removeTail();
+        }else {
+           Node nextNode = nodeToRemove.getNextNode();
+           Node previousNode = nodeToRemove.getPreviousNode();
 
-        return removedTail.data;
+           nextNode.setPreviousNode(previousNode);
+           previousNode.setNextNode(nextNode);
+        }
+        return nodeToRemove;
     }
 
     public String removeHead(){
