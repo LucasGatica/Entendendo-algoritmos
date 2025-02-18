@@ -9,6 +9,32 @@ public class DoublyLinkedList {
         this.tail = null;
     }
 
+    public String removeTail(){
+        Node removedTail = this.tail;
+        if(removedTail==null){
+            return null;
+        }
+        this.tail=removedTail.getPreviousNode();
+        if(removedTail==head){
+            removeHead();
+        }
+
+        return removedTail.data;
+    }
+
+    public String removeHead(){
+        Node removedHead = this.head;
+        if(removedHead==null){
+            return null;
+        }
+        this.head = removedHead.getNextNode();
+        this.head.setPreviousNode(null);
+        if(removedHead==tail){
+              removeTail();
+        }
+        return removedHead.data;
+    }
+
     public void addToTail(String data){
         Node newTail = new Node(data);
         Node currentTail = this.tail;
