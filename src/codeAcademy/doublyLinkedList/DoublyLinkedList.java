@@ -121,6 +121,5 @@ public class DoublyLinkedList {
 
         subway.removeByData("Times Square");
         subway.printList();
-
     }
 }

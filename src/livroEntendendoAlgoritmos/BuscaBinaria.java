@@ -1,3 +1,5 @@
+package livroEntendendoAlgoritmos;
+
 public class BuscaBinaria {
 
     public static Integer buscaBinaria(int[] lista, int item){

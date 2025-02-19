@@ -1,4 +1,4 @@
-package Array.TwoPointer;
+package cursoAugustoGalego.Array.TwoPointer;
 
 public class TwoPointer {
     public static void main(String[] args) {

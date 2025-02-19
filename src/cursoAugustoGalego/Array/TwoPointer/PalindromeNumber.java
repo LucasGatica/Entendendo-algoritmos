@@ -1,4 +1,4 @@
-package Array.TwoPointer;
+package cursoAugustoGalego.Array.TwoPointer;
 
 import java.util.Arrays;
 

@@ -1,3 +1,5 @@
+package livroEntendendoAlgoritmos;
+
 import java.util.ArrayList;
 
 public class SelectionSort {
