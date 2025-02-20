@@ -12,22 +12,20 @@ public class NLastNode {
         Node n = nthLastNode(ll, 9);
         System.out.print(n.data);
     }
-
     public static Node nthLastNode(LinkedList list, int n) {
-        Node current = null;
-        Node tailSeeker = list.head;
-        int count = 0;
-        while (tailSeeker != null) {
-            tailSeeker = tailSeeker.getNextNode();
-            if (count >= n) {
-                if (current == null) {
-                    current = list.head;
-                }
-                current = current.getNextNode();
+        Node nthLastNode = null;
+        Node currentNode = list.head;
+        while(currentNode!=null){
+            if(currentNode.getNextNode()==null){
+                currentNode = currentNode.getNextNode();
+                break;
             }
-            count++;
+            if (currentNode.getNextNode().data.equals(String.valueOf(n))){
+                nthLastNode = currentNode;
+            }
+            currentNode= currentNode.getNextNode();
         }
-        return current;
+        return nthLastNode;
     }
 
     public static LinkedList createList() {
