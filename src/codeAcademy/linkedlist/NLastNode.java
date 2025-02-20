@@ -9,24 +9,25 @@ public class NLastNode {
         // Use this to test your code:
         LinkedList ll = createList();
         ll.printList();
-        Node n = nthLastNode(ll, 50);
+        Node n = nthLastNode(ll, 9);
         System.out.print(n.data);
     }
 
     public static Node nthLastNode(LinkedList list, int n) {
-        Node nthLastNode = null;
-        Node currentNode = list.head;
-        while(currentNode!=null){
-            if(currentNode.getNextNode()==null){
-                currentNode = currentNode.getNextNode();
-                break;
+        Node current = null;
+        Node tailSeeker = list.head;
+        int count = 0;
+        while (tailSeeker != null) {
+            tailSeeker = tailSeeker.getNextNode();
+            if (count >= n) {
+                if (current == null) {
+                    current = list.head;
+                }
+                current = current.getNextNode();
             }
-            if (currentNode.getNextNode().data.equals(String.valueOf(n))){
-                nthLastNode = currentNode;
-            }
-            currentNode= currentNode.getNextNode();
+            count++;
         }
-        return nthLastNode;
+        return current;
     }
 
     public static LinkedList createList() {
