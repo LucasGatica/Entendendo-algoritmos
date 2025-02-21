@@ -18,6 +18,13 @@ public class Queue {
         this.size = 0;
         this.maxSize = maxSize;
     }
+    public boolean hasSpace(){
+        return this.size<this.maxSize;
+    }
+
+    public boolean isEmpty(){
+        return this.size==0;
+    }
 
     public void enqueue(String data){
         this.queue.addToTail(data);
@@ -36,15 +43,14 @@ public class Queue {
     }
 
     public static void main(String[] args) {
-
-      Queue smoothieOrders = new Queue();
-      smoothieOrders.enqueue("strawberry banana");
-      smoothieOrders.enqueue("chocolate peanut butter");
-      System.out.println("Blending the smoothies...");
-      smoothieOrders.dequeue();
-      smoothieOrders.dequeue();
-      System.out.println("All orders are complete!");
-
+      /*
+      Queue queueOne = new Queue(25);
+      Queue queueTwo = new Queue(0);
+      System.out.println("queueOne has space for more nodes: " + queueOne.hasSpace());
+      System.out.println("queueTwo has space for more nodes: " + queueTwo.hasSpace());
+      System.out.println("queueOne is empty: " + queueOne.isEmpty());
+      System.out.println("queueTwo is empty: " + queueTwo.isEmpty());
+      */
 
     }
 }
