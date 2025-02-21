@@ -1,6 +1,7 @@
 package codeAcademy.Queue;
 
 import codeAcademy.linkedlist.LinkedList;
+import codeAcademy.node.Node;
 
 public class Queue {
 
@@ -15,14 +16,22 @@ public class Queue {
 
     public Queue(int maxSize){
         this.queue = new LinkedList();
+        this.size = 0;
         this.maxSize = maxSize;
-        this.size =0;
+    }
+
+    public void enqueue(String data){
+        this.queue.addToTail(data);
+        this.size++;
+        System.out.println("Added"+data+"! Queue size is now "+ this.size);
     }
 
     public static void main(String[] args) {
-        Queue queueOne = new Queue(10);
-        System.out.println("queueOne can have "+ queueOne.maxSize + " nodes!");
-        Queue queueTwo = new Queue();
-        System.out.println("queueTwo can have "+ queueTwo.maxSize + " nodes!");
+
+      Queue coffeeOrder = new Queue();
+      System.out.println("coffeeOrder queue has " + coffeeOrder.size + " orders.");
+      coffeeOrder.enqueue("latte");
+      coffeeOrder.enqueue("espresso");
+      coffeeOrder.enqueue("cappuccino");
     }
 }
