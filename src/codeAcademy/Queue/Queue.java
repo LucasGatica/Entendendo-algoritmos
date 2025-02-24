@@ -27,9 +27,13 @@ public class Queue {
     }
 
     public void enqueue(String data){
-        this.queue.addToTail(data);
-        this.size++;
-        System.out.println("Added"+data+"! Queue size is now "+ this.size);
+        if(hasSpace()){
+            this.queue.addToTail(data);
+            this.size++;
+            System.out.println("Added "+data+"! Queue size is now "+ this.size);
+        }else{
+            throw new Error("Queue is full!");
+        }
     }
     public String dequeue() {
         if(!isEmpty()){
@@ -51,14 +55,9 @@ public class Queue {
     public static void main(String[] args) {
 
       Queue boundedQueue = new Queue(3);
-      boundedQueue.enqueue("one");
-      boundedQueue.enqueue("two");
-      boundedQueue.enqueue("three");
-
+      boundedQueue.enqueue("latte");
+      boundedQueue.enqueue("latte");
       boundedQueue.dequeue();
-      boundedQueue.dequeue();
-      boundedQueue.dequeue();
-
 
     }
 }
