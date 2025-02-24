@@ -52,12 +52,4 @@ public class Queue {
         return null;
     }
 
-    public static void main(String[] args) {
-
-      Queue boundedQueue = new Queue(3);
-      boundedQueue.enqueue("latte");
-      boundedQueue.enqueue("latte");
-      boundedQueue.dequeue();
-
-    }
 }
