@@ -21,17 +21,27 @@ public class Stack {
 
     // Define push() below
     public void push(String data){
-        this.stack.addToHead(data);
-        this.size++;
-        System.out.println("Added "+data+"! Stack size is now "+this.size);
+        if(hasSpace()){
+            this.stack.addToHead(data);
+            this.size++;
+            System.out.println("Added "+data+"! Stack size is now "+this.size);
+
+        }else{
+            throw new Error("Stack is full!");
+        }
 
     }
 
     public String pop(){
-        String data =this.stack.removeHead();
-        this.size--;
-        System.out.println("Removed "+ data+"! Stack size is now " +this.size);
-        return data;
+        if(!isEmpty()){
+            String data =this.stack.removeHead();
+            this.size--;
+            System.out.println("Removed "+ data+"! Stack size is now " +this.size);
+            return data;
+        }else{
+            throw new Error("Stack is empty!");
+        }
+
     }
 
     public boolean hasSpace(){
@@ -43,8 +53,11 @@ public class Stack {
     }
 
     public String peek(){
-        String data = stack.head.data;
-        return data;
+        if(!isEmpty()){
+            String data = stack.head.data;
+            return data;
+        }
+        return null;
     }
 
     public static void main(String[]args) {
