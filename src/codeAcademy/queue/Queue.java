@@ -1,4 +1,4 @@
-package codeAcademy.Queue;
+package codeAcademy.queue;
 
 import codeAcademy.linkedlist.LinkedList;
 

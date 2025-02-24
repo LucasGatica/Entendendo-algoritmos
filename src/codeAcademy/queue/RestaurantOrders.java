@@ -1,4 +1,4 @@
-package codeAcademy.Queue;
+package codeAcademy.queue;
 
 public class RestaurantOrders {
 
