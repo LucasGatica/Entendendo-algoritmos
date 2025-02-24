@@ -27,14 +27,27 @@ public class Stack {
 
     }
 
+    public String pop(){
+        String data =this.stack.removeHead();
+        this.size--;
+        System.out.println("Removed "+ data+"! Stack size is now " +this.size);
+        return data;
+    }
+
+    public String peek(){
+        String data = stack.head.data;
+        return data;
+    }
+
     public static void main(String[]args) {
-        /*
-        Stack dishes = new Stack();
-        dishes.push("blue plate");
-        dishes.push("white plate");
-        dishes.push("yellow plate");
-        System.out.println("The " + dishes.stack.head.data + " is at the top of the stack.");
-        */
+
+        Stack bracelets = new Stack();
+        bracelets.push("silver");
+        bracelets.push("gold");
+        bracelets.push("bronze");
+        System.out.println("I decided I only want to wear the silver bracelet!");
+        bracelets.pop();
+        bracelets.pop();
 
     }
 }
