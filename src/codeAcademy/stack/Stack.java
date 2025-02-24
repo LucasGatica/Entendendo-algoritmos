@@ -34,6 +34,14 @@ public class Stack {
         return data;
     }
 
+    public boolean hasSpace(){
+        return this.size<this.maxSize;
+    }
+
+    public boolean isEmpty(){
+        return this.size==0;
+    }
+
     public String peek(){
         String data = stack.head.data;
         return data;
