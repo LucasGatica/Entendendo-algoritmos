@@ -14,17 +14,27 @@ public class Stack {
     }
 
     public Stack(int maxSize) {
-        this.maxSize = maxSize;
         this.stack = new LinkedList();
         this.size = 0;
+        this.maxSize = maxSize;
+    }
+
+    // Define push() below
+    public void push(String data){
+        this.stack.addToHead(data);
+        this.size++;
+        System.out.println("Added "+data+"! Stack size is now "+this.size);
+
     }
 
     public static void main(String[]args) {
-      
-        Stack stackOne = new Stack(6);
-        System.out.println("stackOne can have " + stackOne.maxSize + " nodes!");
-        Stack stackTwo = new Stack();
-        System.out.println("stackTwo can have " + stackTwo.maxSize + " nodes!");
+        /*
+        Stack dishes = new Stack();
+        dishes.push("blue plate");
+        dishes.push("white plate");
+        dishes.push("yellow plate");
+        System.out.println("The " + dishes.stack.head.data + " is at the top of the stack.");
+        */
 
     }
 }
