@@ -1,14 +1,15 @@
 package codeAcademy.hashMaps;
 
-
-import java.util.Arrays;
-
 public class HashMap {
 
-    public String[] hashmap;
+    public LinkedList[] hashmap;
 
     public HashMap(int size) {
-        this.hashmap = new String[size];
+        this.hashmap = new LinkedList[size];
+       // this.hashmap = new String[size];
+        for(int i =0; i<size; i++){
+            this.hashmap[i] = new LinkedList();
+        }
 
     }
 
@@ -21,17 +22,24 @@ public class HashMap {
     }
 
     public void assign(String key, String value){
-        //    hashmap[]
         int arrayIndex = this.hash(key);
+        LinkedList list = this.hashmap[arrayIndex];
 
-        hashmap[arrayIndex]= value;
+        if(list.head==null){
+            list.addToHead(key,value);
+            return;
+        }
 
     }
+/*
+    public String retrieve(String key){
+        int arrayIndex = this.hash(key);
+        return hashmap[arrayIndex];
+    }
+
+ */
+
     public static void main(String[] args) {
-        HashMap employees = new HashMap(3);
-        employees.assign("34-567", "Mara");
 
-
-        System.out.println(Arrays.toString(employees.hashmap));
     }
 }
